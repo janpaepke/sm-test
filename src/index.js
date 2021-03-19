@@ -1,3 +1,5 @@
+import './index.css';
+
 import { ScrollMagic } from 'scrollmagic';
 
 /*

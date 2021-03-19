@@ -17,6 +17,10 @@ module.exports = {
 				enforce: 'pre',
 				use: ['source-map-loader'],
 			},
+			{
+				test: /\.css$/i,
+				use: ['style-loader', 'css-loader'],
+			},
 		],
 	},
 	plugins: [
@@ -24,7 +28,4 @@ module.exports = {
 			template: 'src/index.html',
 		}),
 	],
-	optimization: {
-		// minimize: false,
-	},
 };
