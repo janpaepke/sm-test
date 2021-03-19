@@ -69,8 +69,8 @@ window.a = new ScrollMagic({
 // starts when it touches the top, ends when it stops touching the bottom
 window.b = new ScrollMagic({
 	element: '#b',
-	triggerStart: 0, // touches top
-	triggerEnd: 0, // stops touching bottom
+	triggerStart: 0, // touches top of scrollParent
+	triggerEnd: 0, // stops touching bottom of scrollParent
 });
 
 // starts when it touches the center, ends when it stops touching the center
