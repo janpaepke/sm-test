@@ -21,7 +21,7 @@
 				height: 200px;
 				position: relative;
 			}
-			.triggerElement::after {
+			.triggerElement::before {
 				content: '';
 				position: absolute;
 				top: 0;
@@ -35,7 +35,7 @@
 			.active {
 				background-color: lightseagreen;
 			}
-			.active::after {
+			.active::before {
 				opacity: 1;
 			}
 			.large {
@@ -43,6 +43,7 @@
 			}
 			.spacer {
 				height: 120vh;
+				position: relative;
 			}
 			#centerMarker {
 				position: fixed;
@@ -51,6 +52,37 @@
 				width: 30px;
 				background-color: blue;
 				z-index: 1;
+			}
+			/* visual markers for elements with offsets (have no functional impact) */
+			#d::after {
+				/* top marker */
+				content: '';
+				position: absolute;
+				top: -50px;
+				left: 0;
+				height: 1px;
+				width: 20px;
+				background-color: green;
+			}
+			#d + .spacer::before {
+				/* using spacer, as element:before is already used for progress indicator */
+				content: '';
+				position: absolute;
+				top: 100px;
+				left: 0;
+				height: 1px;
+				width: 20px;
+				background-color: red;
+			}
+			#e::after {
+				/* bottom marker */
+				content: '';
+				position: absolute;
+				top: 150px;
+				left: 0;
+				height: 1px;
+				width: 20px;
+				background-color: red;
 			}
 		</style>
 	</head>
