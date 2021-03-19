@@ -76,8 +76,8 @@ window.b = new ScrollMagic({
 // starts when it touches the center, ends when it stops touching the center
 window.c = new ScrollMagic({
 	element: '#c',
-	triggerStart: 'center', // alias for 50%
-	triggerEnd: 'center', // alias for 50%
+	triggerStart: 'center', // alias for 50%, equivalent in css: top: 50%
+	triggerEnd: 'center', // alias for 50%, equivalent in css: bottom: 50%
 });
 
 // starts 50px before the center, ends 100px after passing it
@@ -85,8 +85,8 @@ window.d = new ScrollMagic({
 	element: '#d',
 	triggerStart: 'center',
 	triggerEnd: 'center',
-	elementStart: -50, // 50px above the element, same as css: top: -50px
-	elementEnd: -100, // 100px below the element, same as css: bottom: -100px
+	elementStart: -50, // 50px above the element, equivalent in css: top: -50px
+	elementEnd: -100, // 100px below the element, equivalent in css: bottom: -100px
 });
 
 // starts when touching the center, ends after 150px are scrolled, regardless of element height
@@ -94,7 +94,7 @@ window.e = new ScrollMagic({
 	element: '#e',
 	triggerStart: 'center',
 	triggerEnd: 'center',
-	elementEnd: (size) => size - 150, // equal to css: bottom: calc(100% - 150px)
+	elementEnd: (size) => size - 150, // equivalent in css: bottom: calc(100% - 150px)
 });
 
 // starts when fully visible, ends when starting to disappear
