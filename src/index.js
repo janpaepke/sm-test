@@ -118,11 +118,10 @@ const updateProgressBar = (e) => {
 	elem.style.setProperty('--progress', `${e.target.progress * 100}%`);
 };
 
-let i = 0;
 const setUpListeners = (name) => {
 	const log = (e) => {
 		if ('progress' === e.type) {
-			console.log(`%c${name}`, `color: red`, `${e.direction} - progress:`, i++, e.target.progress);
+			console.log(`%c${name}`, `color: red`, `${e.direction} - progress:`, e.target.progress);
 			return;
 		}
 		console.log(`%c${name} %c${e.direction} - ${e.type} (${e.location})`, 'color: red', 'color: green');
