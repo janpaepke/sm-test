@@ -1,0 +1,2 @@
+export declare const sanitizeProperties: <T extends Record<string, any>>(obj: T, defaults: Record<string, any>, onUnknown?: (propertyName: string) => void) => T;
+//# sourceMappingURL=sanitizeProperties.d.ts.map

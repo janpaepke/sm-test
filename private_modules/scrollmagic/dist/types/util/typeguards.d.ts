@@ -1,0 +1,9 @@
+export declare const isNumber: (val: unknown) => val is number;
+export declare const isString: (val: unknown) => val is string;
+export declare const isUndefined: (val: unknown) => val is undefined;
+export declare const isNull: (val: unknown) => val is null;
+export declare const isWindow: (val: unknown) => val is Window;
+export declare const isDocument: (val: unknown) => val is Document;
+export declare const isHTMLElement: (val: unknown) => val is HTMLElement;
+export declare const isSVGElement: (val: unknown) => val is SVGElement;
+//# sourceMappingURL=typeguards.d.ts.map

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ScrollMagic Demo</title>
+		<style>
+			body {
+				margin: 0;
+				font-family: sans-serif;
+			}
+			#intro {
+				padding: 20px;
+				background-color: lightskyblue;
+			}
+			.triggerElement {
+				--progress: 0%; /* used for indicator */
+				background-color: lightcoral;
+				transition: background-color 500ms;
+				padding: 20px;
+				box-sizing: border-box;
+				height: 200px;
+				position: relative;
+			}
+			.triggerElement::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: var(--progress);
+				background-color: rgba(50, 50, 50, 0.2);
+				transition: opacity 500ms;
+				opacity: 0;
+			}
+			.active {
+				background-color: lightseagreen;
+			}
+			.active::after {
+				opacity: 1;
+			}
+			.large {
+				height: 140vh;
+			}
+			.spacer {
+				height: 120vh;
+			}
+			#centerMarker {
+				position: fixed;
+				bottom: 50%;
+				height: 1px;
+				width: 30px;
+				background-color: blue;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="centerMarker"></div>
+		<div id="intro">you might want to open the console. :)</div>
+		<div class="spacer"></div>
+		<div class="triggerElement" id="a">
+			element with default triggers -> starts when it comes ito view and ends when it leaves it.
+		</div>
+		<div class="spacer"></div>
+		<div class="triggerElement large" id="b">running as long as the element covers the whole viewport</div>
+		<div class="spacer"></div>
+		<div class="triggerElement" id="c">while moving past the center</div>
+		<div class="spacer"></div>
+		<div class="triggerElement" id="d">
+			center again, but this time starting 50px before element and ending 100px after it
+		</div>
+		<div class="spacer"></div>
+		<div class="triggerElement" id="e">
+			one more time on center, but it ends after exactly 150px are scrolled regardless of element height
+		</div>
+		<div class="spacer"></div>
+		<div class="triggerElement" id="f">starts when when fully visible, ends when not fully visible anymore</div>
+		<div class="spacer"></div>
+	</body>
+	<script src="main.js"></script>
+</html>
