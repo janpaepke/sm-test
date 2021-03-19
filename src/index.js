@@ -128,13 +128,30 @@ const setUpListeners = (name) => {
 		}
 		console.log(`%c${name} %c${e.direction} - ${e.type} (${e.location})`, 'color: red', 'color: green');
 	};
-	window[name]
+	const instance = window[name]
 		.on('enter', log)
 		.on('leave', log)
 		.on('progress', log)
 		.on('progress', updateProgressBar)
 		.on('enter', toggleClass)
 		.on('leave', toggleClass);
+
+	// setup menu item
+	const menu = document.querySelector('menu');
+	const li = document.createElement('li');
+	const a = document.createElement('a');
+	a.href = `#${name}`;
+	a.innerHTML = name;
+	a.onclick = (e) => {
+		e.preventDefault();
+		console.log('asd');
+		window.scrollTo({
+			top: instance.scrollOffset.start, // this will return the appropriate scroll offset for the start of the scene
+			behavior: 'smooth',
+		});
+	};
+	li.appendChild(a);
+	menu.appendChild(li);
 };
 
 ['a', 'b', 'c', 'd', 'e', 'f'].forEach(setUpListeners);
