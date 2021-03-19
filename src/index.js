@@ -119,16 +119,31 @@ const updateProgressBar = (e) => {
 	const elem = e.target.computedOptions.element;
 	elem.style.setProperty('--progress', `${e.target.progress * 100}%`);
 };
+const logFactory = (name) => (e) => {
+	if ('progress' === e.type) {
+		console.log(`%c${name}`, `color: red`, `${e.direction} - progress:`, e.target.progress);
+		return;
+	}
+	console.log(`%c${name} %c${e.direction} - ${e.type} (${e.location})`, 'color: red', 'color: green');
+};
+const addMenuItem = (name) => {
+	const menu = document.querySelector('menu');
+	const li = document.createElement('li');
+	const a = document.createElement('a');
+	a.href = `#${name}`;
+	a.innerHTML = name;
+	li.appendChild(a);
+	menu.appendChild(li);
+	return a;
+};
 
 const setUpListeners = (name) => {
-	const log = (e) => {
-		if ('progress' === e.type) {
-			console.log(`%c${name}`, `color: red`, `${e.direction} - progress:`, e.target.progress);
-			return;
-		}
-		console.log(`%c${name} %c${e.direction} - ${e.type} (${e.location})`, 'color: red', 'color: green');
-	};
-	const instance = window[name]
+	const instance = window[name];
+	const log = logFactory(name);
+	const menuItem = addMenuItem(name);
+
+	// add instances listeners
+	instance
 		.on('enter', log)
 		.on('leave', log)
 		.on('progress', log)
@@ -136,22 +151,14 @@ const setUpListeners = (name) => {
 		.on('enter', toggleClass)
 		.on('leave', toggleClass);
 
-	// setup menu item
-	const menu = document.querySelector('menu');
-	const li = document.createElement('li');
-	const a = document.createElement('a');
-	a.href = `#${name}`;
-	a.innerHTML = name;
-	a.onclick = (e) => {
+	// add correct menu item behaviour
+	menuItem.onclick = (e) => {
 		e.preventDefault();
-		console.log('asd');
 		window.scrollTo({
 			top: instance.scrollOffset.start, // this will return the appropriate scroll offset for the start of the scene
 			behavior: 'smooth',
 		});
 	};
-	li.appendChild(a);
-	menu.appendChild(li);
 };
 
 ['a', 'b', 'c', 'd', 'e', 'f'].forEach(setUpListeners);

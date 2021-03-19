@@ -92,12 +92,14 @@ menu {
 	text-align: center;
 }
 menu li {
-	margin: 20px 15px;
+	margin: 0;
 }
 menu li a {
+	padding: 15px 15px;
 	text-decoration: none;
 	color: white;
+	display: block;
 }
 menu li a:hover {
-	text-decoration: underline;
+	background-color: rgba(255, 255, 255, 0.1);
 }
