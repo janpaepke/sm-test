@@ -1,14 +1,20 @@
 import { DispatchableEvent } from './EventDispatcher';
 export declare type ScrollParent = HTMLElement | Window;
+declare type ScrollDelta = {
+    deltaX: number;
+    deltaY: number;
+};
 declare type EventType = 'scroll' | 'resize';
 export declare class ContainerEvent implements DispatchableEvent {
-    readonly type: EventType;
     readonly target: Container;
-    constructor(type: EventType, target: Container);
+    readonly type: EventType;
+    readonly scrollDelta: ScrollDelta;
+    constructor(target: Container, type: EventType, scrollDelta?: ScrollDelta);
 }
 export declare class Container {
     readonly scrollParent: ScrollParent;
     private dimensions;
+    private scrollPos;
     private dispatcher;
     private cleanups;
     constructor(scrollParent: ScrollParent);

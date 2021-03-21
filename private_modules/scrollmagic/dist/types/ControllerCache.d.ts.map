@@ -1,1 +1,0 @@
-{"version":3,"file":"ControllerCache.d.ts","sourceRoot":"","sources":["../../src/scrollmagic/ControllerCache.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAI1C,qBAAa,eAAe;IAC3B,OAAO,CAAC,MAAM,CAAC,WAAW,CAA+C;IAGzE,MAAM,CAAC,GAAG,CAAC,eAAe,EAAE,WAAW,GAAG,MAAM,EAAE,IAAI,EAAE,GAAG,GAAG,UAAU;IAcxE,MAAM,IAAI,OAAO;CAIjB"}

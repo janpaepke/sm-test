@@ -1,7 +1,7 @@
 declare type EventType = string;
 export interface DispatchableEvent {
-    readonly type: EventType;
     readonly target: any;
+    readonly type: EventType;
 }
 declare type Callback<E extends DispatchableEvent> = (event: E) => void;
 export default class EventDispatcher {

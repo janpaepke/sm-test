@@ -4,6 +4,7 @@ declare const verticalProps: {
     readonly size: "height";
     readonly clientSize: "clientHeight";
     readonly scrollSize: "scrollHeight";
+    readonly scrollDelta: "deltaY";
 };
 declare const horizontalProps: {
     readonly start: "left";
@@ -11,6 +12,7 @@ declare const horizontalProps: {
     readonly size: "width";
     readonly clientSize: "clientWidth";
     readonly scrollSize: "scrollWidth";
+    readonly scrollDelta: "deltaX";
 };
 declare type VerticalProps = typeof verticalProps;
 declare type HorizontalProps = typeof horizontalProps;
@@ -35,6 +37,7 @@ export declare const pickRelevantValues: <T extends Partial<RectInfo>, V extends
     size: MatchType<T, RectInfo, "height"> | MatchType<T, RectInfo, "width">;
     clientSize: MatchType<T, RectInfo, "clientHeight"> | MatchType<T, RectInfo, "clientWidth">;
     scrollSize: MatchType<T, RectInfo, "scrollHeight"> | MatchType<T, RectInfo, "scrollWidth">;
+    scrollDelta: MatchType<T, RectInfo, "deltaY"> | MatchType<T, RectInfo, "deltaX">;
 };
 export {};
 //# sourceMappingURL=pickRelevantInfo.d.ts.map

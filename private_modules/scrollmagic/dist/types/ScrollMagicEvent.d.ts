@@ -15,11 +15,11 @@ export declare enum ScrollMagicEventLocation {
     End = "end"
 }
 declare class ScrollMagicEvent implements DispatchableEvent {
-    readonly type: ScrollMagicEventType;
     readonly target: ScrollMagic;
+    readonly type: ScrollMagicEventType;
     readonly direction: ScrollMagicEventScrollDirection;
     readonly location: ScrollMagicEventLocation;
-    constructor(type: ScrollMagicEventType, movingForward: boolean, target: ScrollMagic);
+    constructor(target: ScrollMagic, type: ScrollMagicEventType, movingForward: boolean);
 }
 export default ScrollMagicEvent;
 //# sourceMappingURL=ScrollMagicEvent.d.ts.map
