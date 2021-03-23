@@ -1,7 +1,22 @@
+import { ContainerEvent } from './Container';
 import * as Options from './Options';
 import ScrollMagicEvent, { ScrollMagicEventType } from './ScrollMagicEvent';
 export { Public as ScrollMagicOptions } from './Options';
 declare type EventTypeEnumOrUnion = ScrollMagicEventType | `${ScrollMagicEventType}`;
+declare type ElementBounds = {
+    start: number;
+    size: number;
+    offsetStart: number;
+    offsetEnd: number;
+    trackSize: number;
+};
+declare type ContainerBounds = {
+    clientSize: number;
+    offsetStart: number;
+    offsetEnd: number;
+    trackSize: number;
+    scrollSize: number;
+};
 export declare class ScrollMagic {
     readonly name = "ScrollMagic";
     private readonly dispatcher;
@@ -10,27 +25,31 @@ export declare class ScrollMagic {
     private readonly viewportObserver;
     private readonly executionQueue;
     private readonly update;
-    private readonly debouncedOnFastScrollDetected;
-    private optionsPublic;
-    private optionsPrivate;
-    private elementBoundsCache;
-    private currentProgress;
-    private intersecting?;
+    protected optionsPublic: Options.Public;
+    protected optionsPrivate: Options.Private;
+    protected elementBoundsCache: ElementBounds;
+    protected containerBoundsCache: ContainerBounds;
+    protected currentProgress: number;
+    protected intersecting?: boolean;
     constructor(options?: Partial<Options.Public>);
-    private triggerEvent;
+    protected getViewportMargin(): {
+        top: string;
+        left: string;
+        right: string;
+        bottom: string;
+    };
+    protected getTrackSize(): number;
+    protected updateIntersectingState(nextIntersecting: boolean | undefined): void;
+    protected updateElementBoundsCache(): void;
+    protected updateContainerBoundsCache(): void;
+    protected updateProgress(): void;
+    protected updateViewportObserver(): void;
+    protected onOptionChanges(changes: Array<keyof Options.Private>): void;
+    protected onElementResize(): void;
+    protected onContainerUpdate(e: ContainerEvent): void;
+    protected onIntersectionChange(intersecting: boolean, target: Element): void;
+    protected triggerEvent(type: ScrollMagicEventType, forward: boolean): void;
     modify(options: Partial<Options.Public>): ScrollMagic;
-    private getViewportMargin;
-    private getElementBounds;
-    private getContainerBounds;
-    private updateIntersecting;
-    private updateElementBoundsCache;
-    private updateProgress;
-    private updateViewportObserver;
-    private onOptionChanges;
-    private onElementResize;
-    private onContainerUpdate;
-    private onIntersectionChange;
-    private onFastScrollDetected;
     set element(element: Options.Public['element']);
     get element(): Options.Public['element'];
     set scrollParent(scrollParent: Options.Public['scrollParent']);
@@ -55,7 +74,7 @@ export declare class ScrollMagic {
     off(type: EventTypeEnumOrUnion, cb: (e: ScrollMagicEvent) => void): ScrollMagic;
     subscribe(type: EventTypeEnumOrUnion, cb: (e: ScrollMagicEvent) => void): () => void;
     destroy(): void;
-    private static defaultOptionsPublic;
+    protected static defaultOptionsPublic: Options.Public;
     static default(options?: Partial<Options.Public>): Options.Public;
 }
 //# sourceMappingURL=ScrollMagic.d.ts.map
