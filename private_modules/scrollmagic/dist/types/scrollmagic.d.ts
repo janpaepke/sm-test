@@ -1,8 +1,6 @@
 import { ContainerEvent } from './Container';
 import * as Options from './Options';
 import ScrollMagicEvent, { ScrollMagicEventType } from './ScrollMagicEvent';
-export { Public as ScrollMagicOptions } from './Options';
-declare type EventTypeEnumOrUnion = ScrollMagicEventType | `${ScrollMagicEventType}`;
 declare type ElementBounds = {
     start: number;
     size: number;
@@ -25,13 +23,13 @@ export declare class ScrollMagic {
     private readonly viewportObserver;
     private readonly executionQueue;
     private readonly update;
-    protected optionsPublic: Options.Public;
+    protected optionsPublic: Required<Options.Public>;
     protected optionsPrivate: Options.Private;
     protected elementBoundsCache: ElementBounds;
     protected containerBoundsCache: ContainerBounds;
     protected currentProgress: number;
     protected intersecting?: boolean;
-    constructor(options?: Partial<Options.Public>);
+    constructor(options?: Options.Public);
     protected getViewportMargin(): {
         top: string;
         left: string;
@@ -49,32 +47,33 @@ export declare class ScrollMagic {
     protected onContainerUpdate(e: ContainerEvent): void;
     protected onIntersectionChange(intersecting: boolean, target: Element): void;
     protected triggerEvent(type: ScrollMagicEventType, forward: boolean): void;
-    modify(options: Partial<Options.Public>): ScrollMagic;
-    set element(element: Options.Public['element']);
-    get element(): Options.Public['element'];
-    set scrollParent(scrollParent: Options.Public['scrollParent']);
-    get scrollParent(): Options.Public['scrollParent'];
-    set vertical(vertical: Options.Public['vertical']);
-    get vertical(): Options.Public['vertical'];
-    set triggerStart(triggerStart: Options.Public['triggerStart']);
-    get triggerStart(): Options.Public['triggerStart'];
-    set triggerEnd(triggerEnd: Options.Public['triggerEnd']);
-    get triggerEnd(): Options.Public['triggerEnd'];
-    set elementStart(elementStart: Options.Public['elementStart']);
-    get elementStart(): Options.Public['elementStart'];
-    set elementEnd(elementEnd: Options.Public['elementEnd']);
-    get elementEnd(): Options.Public['elementEnd'];
+    modify(options: Options.Public): ScrollMagic;
+    set element(element: Required<Options.Public>['element']);
+    get element(): Required<Options.Public>['element'];
+    set scrollParent(scrollParent: Required<Options.Public>['scrollParent']);
+    get scrollParent(): Required<Options.Public>['scrollParent'];
+    set vertical(vertical: Required<Options.Public>['vertical']);
+    get vertical(): Required<Options.Public>['vertical'];
+    set triggerStart(triggerStart: Required<Options.Public>['triggerStart']);
+    get triggerStart(): Required<Options.Public>['triggerStart'];
+    set triggerEnd(triggerEnd: Required<Options.Public>['triggerEnd']);
+    get triggerEnd(): Required<Options.Public>['triggerEnd'];
+    set elementStart(elementStart: Required<Options.Public>['elementStart']);
+    get elementStart(): Required<Options.Public>['elementStart'];
+    set elementEnd(elementEnd: Required<Options.Public>['elementEnd']);
+    get elementEnd(): Required<Options.Public>['elementEnd'];
     get progress(): number;
     get scrollOffset(): {
         start: number;
         end: number;
     };
     get computedOptions(): Options.PrivateComputed;
-    on(type: EventTypeEnumOrUnion, cb: (e: ScrollMagicEvent) => void): ScrollMagic;
-    off(type: EventTypeEnumOrUnion, cb: (e: ScrollMagicEvent) => void): ScrollMagic;
-    subscribe(type: EventTypeEnumOrUnion, cb: (e: ScrollMagicEvent) => void): () => void;
+    on(type: ScrollMagicEventType, cb: (e: ScrollMagicEvent) => void): ScrollMagic;
+    off(type: ScrollMagicEventType, cb: (e: ScrollMagicEvent) => void): ScrollMagic;
+    subscribe(type: ScrollMagicEventType, cb: (e: ScrollMagicEvent) => void): () => void;
     destroy(): void;
-    protected static defaultOptionsPublic: Options.Public;
-    static default(options?: Partial<Options.Public>): Options.Public;
+    protected static defaultOptionsPublic: Required<Options.Public>;
+    static defaultOptions(options?: Options.Public): Required<Options.Public>;
 }
+export {};
 //# sourceMappingURL=ScrollMagic.d.ts.map

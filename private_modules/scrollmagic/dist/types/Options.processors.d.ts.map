@@ -1,1 +1,1 @@
-{"version":3,"file":"Options.processors.d.ts","sourceRoot":"","sources":["../../src/scrollmagic/Options.processors.ts"],"names":[],"mappings":"AAAA,OAAO,EAEN,OAAO,EAGP,MAAM,EAGN,MAAM,WAAW,CAAC;AA2BnB,eAAO,MAAM,QAAQ,8CAA4F,CAAC;AAoDlH,eAAO,MAAM,OAAO,yDAEP,OAAO;;eACU,OAAO;CAMpC,CAAC"}
+{"version":3,"file":"Options.processors.d.ts","sourceRoot":"","sources":["../../src/Options.processors.ts"],"names":[],"mappings":"AAAA,OAAO,EAEN,OAAO,EAEP,MAAM,EAGN,MAAM,WAAW,CAAC;AA2BnB,eAAO,MAAM,QAAQ,qCAAmF,CAAC;AAoDzG,eAAO,MAAM,OAAO,gDAAiD,OAAO;;eAA8B,OAAO;CAMhH,CAAC"}

@@ -1,8 +1,9 @@
 import './index.css';
 
-import { ScrollMagic } from 'scrollmagic';
+import ScrollMagic from 'scrollmagic';
 
 /*
+Main changes:
  * - modern features (IntersectionObserver, ResizeObserver)
  * - modern integration (ES6), ready for react/angular
  * - triming the fat: simpler interface (only one export, less options)
@@ -17,7 +18,7 @@ import { ScrollMagic } from 'scrollmagic';
  *   element 		(default null)		-> element whose top/left position is used to define a start position
  *   scrollParent 	(default window)	-> parent element, that is being scrolled in
  *   vertical 		(default true)		-> scroll direction, true = vertical, false = horizontal
- *		* the below options behave like css would *
+ *		* the below options behave like css top/bottom would -> positive start offsets down, positive end offsets up
  *   triggerStart 	(default null) 		-> start inset relative to scroll parent (0 = top, 100% = bottom)
  *   triggerEnd 	(default null) 		-> end inset relative to scroll parent (0 = bottom, 100% = top)
  *   elementStart 	(default 0) 		-> start inset relative to element (5 = 5px below top, 100% = bottom)
@@ -41,13 +42,13 @@ import { ScrollMagic } from 'scrollmagic';
  *   destroy 							-> kills instance and frees up memory
  *
  * static:
- *   ScrollMagic.default(options?)		-> gets and/or sets defaults, which will be used for all subsequently created scenes
+ *   ScrollMagic.defaultOptions(options?)-> gets and/or sets defaults, which will be used for all subsequently created scenes
  *
  * events:
  * 	 event.target 						-> instance
  * 	 event.direction 					-> 'forward' or 'reverse', reflecting scroll direction, when event was triggered
  * 	 event.location 					-> 'start', 'end' or 'inside', reflecting where the event hit
- *	 event.type -> well... the event type... what were you thinking?
+ *	 event.type 						-> well... the event type... what were you thinking?
  *
  *
  * still on the roadmap:
@@ -57,11 +58,8 @@ import { ScrollMagic } from 'scrollmagic';
 
 // ! all right, enough foreplay, let's get to the juicy bit !
 
-// setting stuff to window properties, to be able to play around in console
-window.ScrollMagic = ScrollMagic;
-
 // to get/set defaults
-// ScrollMagic.default({ triggerStart: 0 });
+// ScrollMagic.defaultOptions({ triggerStart: 0 });
 
 // default: starts when element enters the scrollParent, ends, when it leaves it.
 window.a = new ScrollMagic({

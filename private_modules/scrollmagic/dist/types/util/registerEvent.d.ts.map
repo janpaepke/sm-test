@@ -1,1 +1,1 @@
-{"version":3,"file":"registerEvent.d.ts","sourceRoot":"","sources":["../../../src/scrollmagic/util/registerEvent.ts"],"names":[],"mappings":"AAAA;;;;;;;GAOG;AACH,QAAA,MAAM,aAAa,WACV,mBAAmB,QACrB,MAAM,CAAC,2BAA2B,GAAG,cAAc,CAAC,YAChD,kCAAkC,8DAE1C,CAAC,MAAM,IAAI,CAGb,CAAC;AAEF,eAAe,aAAa,CAAC"}
+{"version":3,"file":"registerEvent.d.ts","sourceRoot":"","sources":["../../../src/util/registerEvent.ts"],"names":[],"mappings":"AAQA,QAAA,MAAM,aAAa,WACV,mBAAmB,QACrB,MAAM,CAAC,2BAA2B,GAAG,cAAc,CAAC,YAChD,kCAAkC,8DAE1C,CAAC,MAAM,IAAI,CAGb,CAAC;AAEF,eAAe,aAAa,CAAC"}
