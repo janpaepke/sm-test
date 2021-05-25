@@ -4,22 +4,22 @@
 	"description": "",
 	"private": true,
 	"scripts": {
-		"dev": "webpack serve --host 0.0.0.0 --mode=development",
+		"start": "webpack serve --host 0.0.0.0 --mode=development",
 		"build": "webpack",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"css-loader": "^5.2.4",
+		"css-loader": "^5.2.6",
 		"html-webpack-plugin": "^5.3.1",
-		"source-map-loader": "^2.0.1",
+		"source-map-loader": "^3.0.0",
 		"style-loader": "^2.0.0",
-		"webpack": "^5.35.1",
-		"webpack-cli": "^4.6.0",
+		"webpack": "^5.37.1",
+		"webpack-cli": "^4.7.0",
 		"webpack-dev-server": "^3.11.2"
 	},
 	"dependencies": {
-		"scrollmagic": "file:./private_modules/scrollmagic"
+		"scrollmagic": "3.0.0-alpha.2"
 	}
 }

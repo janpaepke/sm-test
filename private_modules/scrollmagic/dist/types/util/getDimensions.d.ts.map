@@ -1,1 +1,0 @@
-{"version":3,"file":"getDimensions.d.ts","sourceRoot":"","sources":["../../../src/util/getDimensions.ts"],"names":[],"mappings":"AAEA,UAAU,UAAU;IACnB,QAAQ,CAAC,WAAW,EAAE,MAAM,CAAC;IAC7B,QAAQ,CAAC,YAAY,EAAE,MAAM,CAAC;IAC9B,QAAQ,CAAC,WAAW,EAAE,MAAM,CAAC;IAC7B,QAAQ,CAAC,YAAY,EAAE,MAAM,CAAC;CAC9B;AAGD,QAAA,MAAM,aAAa,YAAa,MAAM,GAAG,OAAO,KAAG,UAkBlD,CAAC;AAEF,eAAe,aAAa,CAAC"}
