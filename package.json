@@ -20,6 +20,6 @@
 		"webpack-dev-server": "^3.11.2"
 	},
 	"dependencies": {
-		"scrollmagic": "3.0.0-alpha.2"
+		"scrollmagic": "^3.0.0-alpha.4"
 	}
 }
